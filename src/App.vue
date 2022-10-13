@@ -8,7 +8,7 @@ import {
   sameAs,
   numeric,
 } from "@vuelidate/validators";
-import { reactive, computed } from "vue";
+import { reactive, computed, ref } from "vue";
 import { mapState } from "vuex";
 moment().format("h:mm:ss a");
 
@@ -44,12 +44,16 @@ export default {
 
     const v$ = useValidate(rules, state);
 
-    const randomNumber1 = Math.ceil(Math.random() * 10);
-    const randomNumber2 = Math.ceil(Math.random() * 10);
+    const randomNumber1 = ref(Math.ceil(Math.random() * 10));
+    const randomNumber2 = ref(Math.ceil(Math.random() * 10));
 
-    // if (randomNumber1 + randomNumber2 === answer) return;
+    const handleCaptcha = () => {
+      randomNumber1.value = Math.ceil(Math.random() * 10);
+      randomNumber2.value = Math.ceil(Math.random() * 10);
+    };
 
     return {
+      handleCaptcha,
       state,
       v$,
       randomNumber1,
@@ -65,11 +69,6 @@ export default {
       } else {
         alert("Silahkan cek inputan anda lagi");
       }
-    },
-    handleCaptcha() {
-      preventDefault();
-      randomNumber1 = Math.ceil(Math.random() * 10);
-      randomNumber2 = Math.ceil(Math.random() * 10);
     },
   },
   // computed: {
@@ -427,7 +426,9 @@ export default {
                     class="w-full outline-none border-2 border-transparent transition-all rounded-md mr-2 px-2 placeholder-neutral-7 text-center"
                   />
                 </div>
-                <button @onclick="handleCaptcha()">Buat pertanyaan baru</button>
+                <button @click="handleCaptcha" type="button">
+                  Buat pertanyaan baru
+                </button>
               </div>
             </div>
             <div class="mt-4">
