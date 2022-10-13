@@ -138,18 +138,13 @@ export default {
               </div>
             </div>
 
-            <div
-              class="flex place-items-center bg-white px-2 transition-all border-2 border-transparent rounded-t-lg mt-4 font-bold"
-              title="Masukkan Nama Lengkap Sesuai Akta Lahir"
-            >
-              <input
-                placeholder="Nama Lengkap"
-                type="text"
-                name=""
-                v-model="namalengkap"
-                class="upper-case pr-3 py-2 outline-none w-full"
-              />
-            </div>
+            <input
+              placeholder="Nama Lengkap"
+              type="text"
+              name=""
+              v-model="namalengkap"
+              class="bg-white px-2 transition-all border-2 border-transparent focus:border-blue-600 w-full outline-none block p-2 rounded-t-lg"
+            />
             <span
               v-if="v$.namalengkap.$error"
               class="text-status-error text-left text-sm mt-1"
@@ -158,20 +153,15 @@ export default {
             </span>
 
             <div class="w-full sm:inline-flex sm:space-x-2">
-              <div
-                class="flex place-items-center mt-1 bg-white px-2 transition-all border-2 border-transparent w-full sm:w-1/2"
-                title="Masukkan Tempat Lahir Sesuai Akta Lahir"
-              >
-                <input
-                  placeholder="Tempat Lahir"
-                  type="text"
-                  name=""
-                  v-model="tempatlahir"
-                  class="pl-2 pr-3 py-2 outline-none w-full"
-                />
-              </div>
               <input
-                class="bg-white border mt-1 px-3 relative text-base w-full sm:w-1/2 border-transparent"
+                placeholder="Tempat Lahir"
+                type="text"
+                name=""
+                v-model="tempatlahir"
+                class="bg-white px-2 transition-all border-2 border-transparent focus:border-blue-600 outline-none block p-2 w-1/2 mt-2"
+              />
+              <input
+                class="bg-white px-2 transition-all border-2 border-transparent focus:border-blue-600 outline-none block p-2 w-1/2 mt-2"
                 placeholder="Tanggal Lahir"
                 type="date"
                 title="Masukkan Tanggal Lahir Sesuai Akta Lahir"
@@ -250,18 +240,14 @@ export default {
               </table>
             </div>
 
-            <div
-              class="flex place-items-center mt-1 bg-white px-2 transition-all border-2 border-transparent w-full font-bold"
-              title="Masukkan NIK Sesuai KTP"
-            >
-              <input
-                placeholder="Nomor Induk Kependudukan"
-                type="text"
-                name=""
-                v-model="state.nik"
-                class="pl-2 pr-3 py-2 outline-none w-full"
-              />
-            </div>
+            <input
+              placeholder="Nomor Induk Kependudukan"
+              type="text"
+              name=""
+              v-model="state.nik"
+              class="bg-white px-2 transition-all border-2 border-transparent focus:border-blue-600 outline-none block p-2 w-full mt-2"
+            />
+
             <span
               v-if="v$.nik.$error"
               class="text-status-error text-left text-sm mt-1"
@@ -269,30 +255,20 @@ export default {
               NIk harus berisi angka dan harus memuat 16 karakter.
             </span>
 
-            <div
-              class="flex place-items-center mt-1 bg-white px-2 transition-all border-2 border-transparent w-full font-bold"
-              title="Masukkan Nama Tanpa Gelar"
-            >
-              <input
-                placeholder="Nama Ibu Kandung"
-                type="text"
-                name=""
-                class="pl-2 pr-3 py-2 outline-none w-full upper-case"
-              />
-            </div>
+            <input
+              placeholder="Nama Ibu Kandung"
+              type="text"
+              name=""
+              class="bg-white px-2 transition-all border-2 border-transparent focus:border-blue-600 outline-none block p-2 w-full mt-2"
+            />
 
-            <div
-              class="flex place-items-center mt-1 bg-white px-2 transition-all border-2 border-transparent w-full font-bold"
-              title="Diutamakan No HP Terdaftar Whatsapp"
-            >
-              <input
-                placeholder="Nomor Handphone / WA"
-                type="text"
-                name=""
-                v-model="state.telp"
-                class="pl-2 pr-3 py-2 outline-none w-full"
-              />
-            </div>
+            <input
+              placeholder="Nomor Handphone / WA"
+              type="text"
+              name=""
+              v-model="state.telp"
+              class="bg-white px-2 transition-all border-2 border-transparent focus:border-blue-600 outline-none block p-2 w-full mt-2"
+            />
             <span
               v-if="v$.telp.$error"
               class="text-status-error text-left text-sm mt-1"
@@ -300,18 +276,14 @@ export default {
               Hanya bisa memuat angka
             </span>
 
-            <div
-              class="flex place-items-center mt-1 bg-white px-2 transition-all border-2 border-transparent font-bold"
-              title="Masukkan E-mail Yang Aktif Anda Gunakan"
-            >
-              <input
-                placeholder="E-mail Anda"
-                type="email"
-                name=""
-                v-model="state.email"
-                class="pl-2 pr-3 py-2 outline-none w-full"
-              />
-            </div>
+            <input
+              placeholder="E-mail Anda"
+              type="email"
+              name=""
+              v-model="state.email"
+              class="bg-white px-2 transition-all border-2 border-transparent focus:border-blue-600 outline-none block p-2 w-full mt-2"
+            />
+
             <span
               v-if="v$.email.$error"
               class="text-status-error text-left text-sm mt-1"
