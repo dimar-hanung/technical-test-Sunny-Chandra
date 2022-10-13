@@ -440,10 +440,6 @@ export default {
 </template>
 
 <style scoped>
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 .submit-form {
   background-color: #3389fe;
 }
