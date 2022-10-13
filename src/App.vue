@@ -27,6 +27,9 @@ export default {
       answer: "",
     });
 
+    const isShowPassword = ref(false);
+    const isShowConfirmPassword = ref(false);
+
     const rules = computed(() => {
       return {
         email: { required, email },
@@ -58,6 +61,8 @@ export default {
       v$,
       randomNumber1,
       randomNumber2,
+      isShowPassword,
+      isShowConfirmPassword,
     };
   },
 
@@ -301,10 +306,14 @@ export default {
                 data-v-130bfb92=""
                 placeholder="Buat Password"
                 v-model="state.password.password"
-                type="password"
+                :type="isShowPassword ? 'text' : 'password'"
                 class="px-3 py-2 outline-none w-full"
               />
-              <div data-v-130bfb92="" class="cursor-pointer">
+              <div
+                data-v-130bfb92=""
+                class="cursor-pointer"
+                @click="isShowPassword = !isShowPassword"
+              >
                 <svg
                   data-v-130bfb92=""
                   aria-hidden="true"
@@ -314,7 +323,7 @@ export default {
                   role="img"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 576 512"
-                  class="svg-inline--fa fa-eye fa-w-18"
+                  class="svg-inline--fa fa-eye fa-w-18 w-5"
                 >
                   <path
                     data-v-130bfb92=""
@@ -342,10 +351,14 @@ export default {
                 data-v-130bfb92=""
                 placeholder="Konfirmasi Buat Password"
                 v-model="state.password.confirm"
-                type="password"
+                :type="isShowConfirmPassword ? 'text' : 'password'"
                 class="px-3 py-2 outline-none w-full"
               />
-              <div data-v-130bfb92="" class="cursor-pointer">
+              <div
+                data-v-130bfb92=""
+                class="cursor-pointer"
+                @click="isShowConfirmPassword = !isShowConfirmPassword"
+              >
                 <svg
                   data-v-130bfb92=""
                   aria-hidden="true"
@@ -355,7 +368,7 @@ export default {
                   role="img"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 576 512"
-                  class="svg-inline--fa fa-eye fa-w-18"
+                  class="svg-inline--fa fa-eye w-5"
                 >
                   <path
                     data-v-130bfb92=""
