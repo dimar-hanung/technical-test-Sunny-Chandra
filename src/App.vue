@@ -1,7 +1,13 @@
 <script>
 import moment from "moment";
 import useValidate from "@vuelidate/core";
-import { required, email, minLength, sameAs, numeric } from "@vuelidate/validators";
+import {
+  required,
+  email,
+  minLength,
+  sameAs,
+  numeric,
+} from "@vuelidate/validators";
 import { reactive, computed } from "vue";
 import { mapState } from "vuex";
 moment().format("h:mm:ss a");
@@ -105,7 +111,9 @@ export default {
                     id="Diploma"
                     class="mr-1 transform scale-125 cursor-pointer"
                   />
-                  <label for="Diploma" class="cursor-pointer">Diploma dan Sarjana</label>
+                  <label for="Diploma" class="cursor-pointer"
+                    >Diploma dan Sarjana</label
+                  >
                 </div>
                 <div class="mr-5">
                   <input
@@ -114,7 +122,9 @@ export default {
                     id="Magister"
                     class="mr-1 transform scale-125 cursor-pointer"
                     value="magister"
-                  /><label for="Magister" class="cursor-pointer">Magister</label>
+                  /><label for="Magister" class="cursor-pointer"
+                    >Magister</label
+                  >
                 </div>
                 <div class="mr-5">
                   <input
@@ -193,7 +203,9 @@ export default {
                       value="0"
                       class="mr-2 transform scale-125"
                     />
-                    <label for="jenisKelaminA" class="cursor-pointer">Perempuan</label>
+                    <label for="jenisKelaminA" class="cursor-pointer"
+                      >Perempuan</label
+                    >
                   </td>
                   <td>
                     <input
@@ -203,7 +215,9 @@ export default {
                       value="1"
                       class="mr-2 transform scale-125"
                     />
-                    <label for="jenisKelaminB" class="cursor-pointer">Laki-laki</label>
+                    <label for="jenisKelaminB" class="cursor-pointer"
+                      >Laki-laki</label
+                    >
                   </td>
                 </tr>
 
@@ -217,7 +231,9 @@ export default {
                       value="0"
                       class="mr-2 transform scale-125"
                     />
-                    <label for="statusKawinA" class="cursor-pointer">Kawin</label>
+                    <label for="statusKawinA" class="cursor-pointer"
+                      >Kawin</label
+                    >
                   </td>
                   <td>
                     <input
@@ -227,7 +243,9 @@ export default {
                       value="1"
                       class="mr-2 transform scale-125"
                     />
-                    <label for="statusKawinB" class="cursor-pointer">Tidak Kawin</label>
+                    <label for="statusKawinB" class="cursor-pointer"
+                      >Tidak Kawin</label
+                    >
                   </td>
                 </tr>
               </table>
@@ -245,7 +263,10 @@ export default {
                 class="pl-2 pr-3 py-2 outline-none w-full"
               />
             </div>
-            <span v-if="v$.nik.$error" class="text-status-error text-left text-sm mt-1">
+            <span
+              v-if="v$.nik.$error"
+              class="text-status-error text-left text-sm mt-1"
+            >
               NIk harus berisi angka dan harus memuat 16 karakter.
             </span>
 
@@ -273,7 +294,10 @@ export default {
                 class="pl-2 pr-3 py-2 outline-none w-full"
               />
             </div>
-            <span v-if="v$.telp.$error" class="text-status-error text-left text-sm mt-1">
+            <span
+              v-if="v$.telp.$error"
+              class="text-status-error text-left text-sm mt-1"
+            >
               Hanya bisa memuat angka
             </span>
 
@@ -289,7 +313,10 @@ export default {
                 class="pl-2 pr-3 py-2 outline-none w-full"
               />
             </div>
-            <span v-if="v$.email.$error" class="text-status-error text-left text-sm mt-1">
+            <span
+              v-if="v$.email.$error"
+              class="text-status-error text-left text-sm mt-1"
+            >
               Format email tidak sesuai
             </span>
 
@@ -416,7 +443,11 @@ export default {
         </form>
       </div>
       <div class="image h-full hidden xl:block">
-        <img src="./assets/bg-login.png" alt="" class="block object-cover rounded-5xl" />
+        <img
+          src="./assets/bg-login.png"
+          alt=""
+          class="block object-cover rounded-5xl"
+        />
       </div>
     </div>
   </div>
